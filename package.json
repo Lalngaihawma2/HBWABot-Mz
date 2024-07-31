@@ -11,6 +11,10 @@
   "scripts": {
     "start": "node index.js"
   },
+  "engines":{
+      "node":"21.x",
+      "npm":"10.x"
+   },
   "keywords": [
     "whatsapp",
     "2024"
