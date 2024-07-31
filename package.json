@@ -1,6 +1,6 @@
 {
   "name": "hbwabot",
-  "version": "7.0.0",
+  "version": "7.5.0",
   "description": "Automated whatsapp bot hi nodejs leh baileys lib hmanga siam a ni",
   "main": "index.js",
   "type": "commonjs",
@@ -32,8 +32,6 @@
     "html-to-text": "^9.0.5",
     "y2mate-dl": "^1.0.4",
     "rss-parser": "^3.13.0",
-    "canvas": "^2.8.0",
-    "canvas-gif": "^1.0.3",
     "btch-downloader": "^2.3.0-alpha",
     "currency-system": "^2.7.1",
     "dhn-api": "^1.1.3",

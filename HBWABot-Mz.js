@@ -260,7 +260,7 @@ const finishreact = () => {
  HBWABotMz.sendMessage(from, { react: { text: "⬇️" , key: m.key }}) 
  }
  const robotreact = () => {
- HBWABotMz.sendMessage(from, { react: { text: "🤖️" , key: m.key }}) 
+ HBWABotMz.sendMessage(from, { react: { text: "🤖️" , key: m.key }})
  } 
  const helloreact = () => {
  HBWABotMz.sendMessage(from, { react: { text: "👋️" , key: m.key }}) 
@@ -280,6 +280,9 @@ HBWABotMz.readMessages([m.key])
 const dodoi = async (teks) => {
    HBWABotMz.sendMessage(m.chat, { text: teks}, { quoted: m});
     }
+const replymizobiblequotes = (teks) => {
+ HBWABotMz.sendMessage(m.chat, { text: teks, contextInfo:{"externalAdReply": {"showAdAttribution": true, "containsAutoReply": true, "title": `Mizo Bible Quotes`,"body": `HBWABot`, "previewType": "PHOTO","thumbnailUrl": ``,"thumbnail": fs.readFileSync(`./asset/image/MizoBibleQ.png`),"sourceUrl": `https://instagram.com/mizo_bible_quote`}}}, { quoted: m})
+}
     
 function removeFile(FilePath){
     if(!fs.existsSync(FilePath)) return false;
@@ -395,7 +398,7 @@ type: 'append'
 }
 HBWABotMz.ev.emit('messages.upsert', msg)
 }
-
+/*
 //============= [LIST RESPONCE CHECKING START ]================
         if(m.mtype === "interactiveResponseMessage"){
             console.log("interactiveResponseMessage Detected!")   
@@ -414,7 +417,7 @@ HBWABotMz.ev.emit('messages.upsert', msg)
             }
         }
 //============= [LIST RESPONCE CHECKING END ]================
-
+*/
 
  //Suit RPS
 this.suit = this.suit ? this.suit : {}
@@ -2269,7 +2272,8 @@ break
 case `${prefixc}`+'alive': case `${prefixc}`+'menu': case `${prefixc}`+'help':{
 const balance = await eco.balance(limitneihtu, khawlbawm)
 const vawiinni2 = await mizo_tawnga_translate_na.translate(asource1, atarget1, athulo1)
-const lusm = `*Hriattur*: *_Limit i neih loh chuan min hmang thei dawn lo. Min hman i duh chuan limit tih rawn type rawh_*`
+HBWABotMz.sendMessage(from, { react: { text: "😎" , key: m.key }})
+const lusm = `*✑ Hriattur*: *Limit i neih loh chuan min hmang thei dawn lo. Min hman i duh chuan limit tih rawn type rawh*`
 const enm = `_*Note*_\n*If you don't have any limit, you cannot use my features if you want to use my features please type limit*`
      let msg = generateWAMessageFromContent(from, {
   viewOnceMessage: {
@@ -2280,9 +2284,10 @@ const enm = `_*Note*_\n*If you don't have any limit, you cannot use my features 
         },
         interactiveMessage: proto.Message.InteractiveMessage.create({
           body: proto.Message.InteractiveMessage.Body.create({
-            text: `*✑ Vawiin :* ${vawiinni2}
+            text: `*${botname} INFO*
+*✑ Vawiin :* ${vawiinni2}
 *✑ Date :* ${kumtin}
-*✑ Version :* 6.6.0
+*✑ Version :* 7.5.0
 *✑ User :* ${ownernumber}
 *✑ Limit :* ${balance.wallet} 💎
 *✑ Vip :* ${aActiveEm}
@@ -2291,7 +2296,7 @@ const enm = `_*Note*_\n*If you don't have any limit, you cannot use my features 
 ${lusm}`
           }),
           footer: proto.Message.InteractiveMessage.Footer.create({
-            text: `͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏
+            text: `͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏
 ╭═══════════┈
 ┃𒆜┌───┈
 ┃𒆜│${prefixc}vipmenu
@@ -2348,6 +2353,7 @@ break
 break
 case `${prefixc}`+'allmenu': {
 const balance = await eco.balance(limitneihtu, khawlbawm)
+HBWABotMz.sendMessage(from, { react: { text: "😎" , key: m.key }})
 let msg = generateWAMessageFromContent(from, {
   viewOnceMessage: {
     message: {
@@ -2427,8 +2433,8 @@ let msg = generateWAMessageFromContent(from, {
 
 *╭═══❏ Group Menu ❏*
 ┃𒆜┌───┈
-┃𒆜│${prefixc}/group open
-┃𒆜│${prefixc}/group clos
+┃𒆜│${prefixc}group open
+┃𒆜│${prefixc}group clos
 ┃𒆜│${prefixc}grouplink 
 ┃𒆜│${prefixc}add 
 ┃𒆜│${prefixc}kick 
@@ -2551,6 +2557,7 @@ break
 
 case `${prefixc}`+'downloadmenu': { 
 const balance = await eco.balance(limitneihtu, khawlbawm)
+HBWABotMz.sendMessage(from, { react: { text: "🤖️" , key: m.key }})
 var HBLoadingmenu = [
 `《▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒》0%`,
 `《███▒▒▒▒▒▒▒▒▒▒▒▒》10%`,
@@ -2604,6 +2611,7 @@ await HBWABotMz.relayMessage(m.chat, {
 break
 case `${prefixc}`+'groupmenu': { 
 const balance = await eco.balance(limitneihtu, khawlbawm)
+HBWABotMz.sendMessage(from, { react: { text: "🤖️" , key: m.key }})
 var HBLoadingmenu = [
 `《▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒》0%`,
 `《███▒▒▒▒▒▒▒▒▒▒▒▒》10%`,
@@ -2671,6 +2679,7 @@ await HBWABotMz.relayMessage(m.chat, {
 break 
 case `${prefixc}`+'stalkermenu': { 
 const balance = await eco.balance(limitneihtu, khawlbawm)
+HBWABotMz.sendMessage(from, { react: { text: "🤖️" , key: m.key }})
 var HBLoadingmenu = [
 `《▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒》0%`,
 `《███▒▒▒▒▒▒▒▒▒▒▒▒》10%`,
@@ -2709,6 +2718,7 @@ await HBWABotMz.relayMessage(m.chat, {
 break
 case `${prefixc}`+'unbanmenu': { 
 const balance = await eco.balance(limitneihtu, khawlbawm)
+HBWABotMz.sendMessage(from, { react: { text: "🤖️" , key: m.key }})
 var HBLoadingmenu = [
 `《▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒》0%`,
 `《███▒▒▒▒▒▒▒▒▒▒▒▒》10%`,
@@ -2750,6 +2760,7 @@ await HBWABotMz.relayMessage(m.chat, {
 break
 case `${prefixc}`+'mizomenu': { 
 const balance = await eco.balance(limitneihtu, khawlbawm)
+HBWABotMz.sendMessage(from, { react: { text: "🤖️" , key: m.key }})
 var HBLoadingmenu = [
 `《▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒》0%`,
 `《███▒▒▒▒▒▒▒▒▒▒▒▒》10%`,
@@ -2825,6 +2836,7 @@ await HBWABotMz.relayMessage(m.chat, {
 break
 case `${prefixc}`+'aimenu': { 
 const balance = await eco.balance(limitneihtu, khawlbawm)
+HBWABotMz.sendMessage(from, { react: { text: "🤖️" , key: m.key }})
 var HBLoadingmenu = [
 `《▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒》0%`,
 `《███▒▒▒▒▒▒▒▒▒▒▒▒》10%`,
@@ -2873,6 +2885,7 @@ break
 
 case `${prefixc}`+'stickermenu': { 
 const balance = await eco.balance(limitneihtu, khawlbawm)
+HBWABotMz.sendMessage(from, { react: { text: "🤖️" , key: m.key }})
 var HBLoadingmenu = [
 `《▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒》0%`,
 `《███▒▒▒▒▒▒▒▒▒▒▒▒》10%`,
@@ -2917,6 +2930,7 @@ break
 
 case `${prefixc}`+'othermenu': { 
 const balance = await eco.balance(limitneihtu, khawlbawm)
+HBWABotMz.sendMessage(from, { react: { text: "🤖️" , key: m.key }})
 var HBLoadingmenu = [
 `《▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒》0%`,
 `《███▒▒▒▒▒▒▒▒▒▒▒▒》10%`,
@@ -2997,6 +3011,7 @@ break
 
 case `${prefixc}`+'ownermenu': { 
 const balance = await eco.balance(limitneihtu, khawlbawm)
+HBWABotMz.sendMessage(from, { react: { text: "🤖️" , key: m.key }})
 var HBLoadingmenu = [
 `《▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒》0%`,
 `《███▒▒▒▒▒▒▒▒▒▒▒▒》10%`,
@@ -3040,6 +3055,7 @@ await HBWABotMz.relayMessage(m.chat, {
 break
 case `${prefixc}`+'vipmenu': { 
 const balance = await eco.balance(limitneihtu, khawlbawm)
+HBWABotMz.sendMessage(from, { react: { text: "🤖️" , key: m.key }})
 var HBLoadingmenu = [
 `《▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒》0%`,
 `《███▒▒▒▒▒▒▒▒▒▒▒▒》10%`,
@@ -4406,6 +4422,7 @@ case `${prefixc}`+'s': case `${prefixc}`+'sticker': case `${prefixc}`+'stiker': 
 if (!quoted) return dodoi(`Thlalak emaw video rawn thawn la a caption-ah *${prefix+command}* tiin rawn dah rawh\nTi chuan sticker in ka rawn pe ang che`)
 const limit1= await eco.balance(limitneihtu, khawlbawm)
 if (hmanzat > limit1.wallet) return await dailylimit()
+HBWABotMz.sendMessage(from, { react: { text: "🧩" , key: m.key }})
 if (/image/.test(mime)) { 
 let media = await quoted.download()
 let encmedia = await HBWABotMz.sendImageAsSticker(m.chat, media, m, { packname: global.packname, author: global.author })
@@ -4429,6 +4446,7 @@ try {
 if (!q) return dodoi(`_🤖Kha tiang ringawt loh khan tiang hian tih tur_\n*⟨Entirnan :* ${prefix + command} Hello World`) 
 const limit1= await eco.balance(limitneihtu, khawlbawm)
 if (hmanzat > limit1.wallet) return await dailylimit()
+HBWABotMz.sendMessage(from, { react: { text: "🧩" , key: m.key }})
 const { removebg } = require('betabotz-tools')
 const texttoimg = `https://www6.flamingtext.com/net-fu/proxy_form.cgi?&imageoutput=true&script=runner-logo&doScale=true&scaleWidth=800&scaleHeight=500&fontsize=100&text=${encodeURIComponent(q)}`;
 let results = await removebg(texttoimg)
@@ -4444,6 +4462,7 @@ try {
 if (!q) return dodoi(`_🤖Kha tiang ringawt loh khan tiang hian tih tur_\n*⟨Entirnan :* ${prefix + command} Hello World`) 
 const limit1= await eco.balance(limitneihtu, khawlbawm)
 if (hmanzat > limit1.wallet) return await dailylimit()
+HBWABotMz.sendMessage(from, { react: { text: "🧩" , key: m.key }})
 const texttoimg = `https://www6.flamingtext.com/net-fu/proxy_form.cgi?&imageoutput=true&script=sketch-name&doScale=true&scaleWidth=800&scaleHeight=500&fontsize=100&text=${encodeURIComponent(q)}`;
 await HBWABotMz.sendImageAsSticker(m.chat, texttoimg, m, { packname: global.packname, author: `HBWABot` })
 await eco.deduct(limitneihtu, khawlbawm, hmanzat)    
@@ -4458,6 +4477,7 @@ try {
 if (!q) return dodoi(`_🤖Kha tiang ringawt loh khan tiang hian tih tur_\n*⟨Entirnan :* ${prefix + command} Hello World`) 
 const limit1= await eco.balance(limitneihtu, khawlbawm)
 if (hmanzat > limit1.wallet) return await dailylimit()
+HBWABotMz.sendMessage(from, { react: { text: "🧩" , key: m.key }})
 const texttoimg = `https://www6.flamingtext.com/net-fu/proxy_form.cgi?&imageoutput=true&script=fluffy-logo&doScale=true&scaleWidth=800&scaleHeight=500&fontsize=100&text=${encodeURIComponent(q)}`;
 await HBWABotMz.sendImageAsSticker(m.chat, texttoimg, m, { packname: global.packname, author: `HBWABot` })
 await eco.deduct(limitneihtu, khawlbawm, hmanzat)
@@ -4472,6 +4492,7 @@ try {
 if (!q) return dodoi(`_🤖Kha tiang ringawt loh khan tiang hian tih tur_\n*⟨Entirnan :* ${prefix + command} Hello World`) 
 const limit1= await eco.balance(limitneihtu, khawlbawm)
 if (hmanzat > limit1.wallet) return await dailylimit()
+HBWABotMz.sendMessage(from, { react: { text: "🧩" , key: m.key }})
 const texttoimg = `https://www6.flamingtext.com/net-fu/proxy_form.cgi?&imageoutput=true&script=runner-logo&doScale=true&scaleWidth=800&scaleHeight=500&fontsize=100&text=${encodeURIComponent(q)}`;
 await HBWABotMz.sendImageAsSticker(m.chat, texttoimg, m, { packname: global.packname, author: `HBWABot` })
 await eco.deduct(limitneihtu, khawlbawm, hmanzat)
@@ -4486,6 +4507,7 @@ try {
 if (!q) return dodoi(`_🤖Kha tiang ringawt loh khan tiang hian tih tur_\n*⟨Entirnan :* ${prefix + command} Hello World`) 
 const limit1= await eco.balance(limitneihtu, khawlbawm)
 if (hmanzat > limit1.wallet) return await dailylimit()
+HBWABotMz.sendMessage(from, { react: { text: "🧩" , key: m.key }})
 const texttoimg = `https://www6.flamingtext.com/net-fu/proxy_form.cgi?&imageoutput=true&script=smurfs-logo&doScale=true&scaleWidth=800&scaleHeight=500&fontsize=100&text=${encodeURIComponent(q)}`;
 await HBWABotMz.sendImageAsSticker(m.chat, texttoimg, m, { packname: global.packname, author: `HBWABot` })
 await eco.deduct(limitneihtu, khawlbawm, hmanzat)
@@ -5664,33 +5686,6 @@ await eco.deduct(limitneihtu, freevip, 1);
 }
 break
 
-case `${prefixc}`+'khawchin':{
-if (!text) return dodoi('Khawilai hmun nge hriat i duh, khawchin location rawn dah rawh:\nEntirnan: khawchin aizawl')
-            let wdata = await axios.get(
-                `https://api.openweathermap.org/data/2.5/weather?q=${text}&units=metric&appid=060a6bcfa19809c2cd4d97a212b19273&language=en`
-            );
-            let textw = ""
-            textw += `*🗺️Weather of  ${text}*\n\n`
-            textw += `*Weather:-* ${wdata.data.weather[0].main}\n`
-            textw += `*Description:-* ${wdata.data.weather[0].description}\n`
-            textw += `*Avg Temp:-* ${wdata.data.main.temp}\n`
-            textw += `*Feels Like:-* ${wdata.data.main.feels_like}\n`
-            textw += `*Pressure:-* ${wdata.data.main.pressure}\n`
-            textw += `*Humidity:-* ${wdata.data.main.humidity}\n`
-            textw += `*Humidity:-* ${wdata.data.wind.speed}\n`
-            textw += `*Latitude:-* ${wdata.data.coord.lat}\n`
-            textw += `*Longitude:-* ${wdata.data.coord.lon}\n`
-            textw += `*Country:-* ${wdata.data.sys.country}\n`
-
-           HBWABotMz.sendMessage(
-                m.chat, {
-                    text: textw,
-                }, {
-                    quoted: m,
-                }
-           )
-           }
-           break
 case `${prefixc}`+'ghstalk': case `${prefixc}`+'githubstalk':{
 if (!q) return dodoi(`Example ${prefix+command} HBMods-OFC`)
 let githubstalk = require('./lib/scraper')
