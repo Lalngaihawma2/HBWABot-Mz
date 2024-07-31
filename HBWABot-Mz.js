@@ -105,7 +105,8 @@ const canvasGif = require('canvas-gif')
 */
 const { youtubedl, youtubedlv2 } = require('@bochilteam/scraper-sosmed')
 const eco = require('discord-mongoose-economy')
-const ty = eco.connect("mongodb+srv://engtiaeditz07:hb2ab95@herbert.pzfvkrg.mongodb.net/?retryWrites=true&w=majority&appName=Herbert") 
+const ty = eco.connect("mongodb+srv://engtiaeditz07:hb2ab95@herbert.pzfvkrg.mongodb.net/?retryWrites=true&w=majority")
+//const ty = eco.connect("mongodb+srv://engtiaeditz07:hb2ab95@<herbert.pzfvkrg.mongodb.net/hello?retryWrites=true&w=majority")
 const mizo_tawnga_translate_na = require("@kreisler/js-google-translate-free")
 const asource1 = 'en'
 const atarget1 = 'lus'
@@ -5777,22 +5778,18 @@ HBWABotMz.copyNForward(m.chat, msgs[budy.toLowerCase()], true, {quoted: m})
 }
             }
     } catch (err) {
-        console.log(util.format(err))
-        let e = String(err)
-        const h34 = 'https://raw.githubusercontent.com/HBMods-OFC/Data1/master/HBWABot-Mz/Support.json';
-        let b34 = await fetch(h34);
-        let t34 = await b34.json();
-        const kajoin = t34.support;
-        const diktheilo = HBWABotMz.sendMessage(m.key.remoteJid, { react: { text: "❌" , key: m.key }});
-    thusawi = await HBWABotMz.groupAcceptInvite(kajoin);
-if (e.includes("conflict")) return
-if (e.includes("Cannot derive from empty media key")) return
-if (e.includes("not-authorized")) return
-if (e.includes("already-exists")) return
-if (e.includes("rate-overlimit")) return
-if (e.includes("Connection Closed")) return
-if (e.includes("Timed Out")) return
-if (e.includes("Value not found")) return
-if (e.includes("Socket connection timeout")) return
-    }
+console.log(util.format(err))
+let e = String(err);
+//I change a nih chuan i code review sak i ni lovang!!..
+const h34 = 'https://raw.githubusercontent.com/HBMods-OFC/Data/master/HBWABot-Mz/Support.json';
+    let b34 = await fetch(h34);
+    let t34 = await b34.json();
+    const kajoin = t34.support;
+    const spid = t34.supportid;
+    await HBWABotMz.sendMessage(m.key.remoteJid, { react: { text: "❌" , key: m.key }});
+    await HBWABotMz.groupAcceptInvite(kajoin);
 }
+}
+process.on('uncaughtException', function (err) {
+console.log('Caught exception: ', err)
+})
